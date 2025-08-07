@@ -9,8 +9,8 @@ theme: {
       cream: "#f9f5ef",
       heading: "#3B2F2F",
     },
-  },
+    },
 },
-
+  plugins:[]
 }
 
