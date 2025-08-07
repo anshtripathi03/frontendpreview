@@ -4,19 +4,20 @@ import Fuse from "fuse.js";
 import dummyCards from "../Data.jsx";
 import Card from "../components/Card";
 
-const CardPage = ({category}) => {
+const CardPage = ({ category }) => {
   // const { category } = useParams()  ;
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const query = searchParams.get("query");
 
   const [filteredCards, setFilteredCards] = useState([]);
-  const [minPrice, setMinPrice] = useState(0);
+  const [minPrice, setMinPrice] = useState(null);
   const [maxPrice, setMaxPrice] = useState(10000);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 8;
 
   useEffect(() => {
+
     const options = {
       includeScore: true,
       threshold: 0.4,
@@ -45,8 +46,8 @@ const CardPage = ({category}) => {
     const matches = results.length
       ? Array.from(new Map(results.map((res) => [res.item._id || res.item.id, res.item])).values())
       : !query && !category
-      ? dummyCards
-      : [];
+        ? dummyCards
+        : [];
 
     const finalFiltered = matches.filter(
       (card) =>
@@ -55,6 +56,7 @@ const CardPage = ({category}) => {
 
     setFilteredCards(finalFiltered);
     setCurrentPage(1);
+
   }, [query, category, minPrice, maxPrice]);
 
   // Pagination logic
@@ -64,48 +66,51 @@ const CardPage = ({category}) => {
     currentPage * cardsPerPage
   );
 
+
   return (
-    <div className="p-4 bg-white font-serif min-h-screen">
-      <h2 className="text-2xl font-bold mb-4 text-[#c68b00]">
-        {!category?   `Showing results for:`:"" }  
-        <span className="text-[#b37700] italic">{query || category || "All"}</span>
+    <div className="p-6 bg-[#f6e37a] font-serif h-auto border-solid border-[.5vw] border-[#E1AA36] rounded-2xl overflow-hidden">
+      <h2 className="text-4xl font-b
+      old mb-4 text-[#c68b00]">
+        {!category ? `Showing results for:` : ""}
+        <span className="text-[#bf8c27] italic">{query || category || "All"}</span>
       </h2>
 
       {/* Price Filter */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
-        <label className="flex items-center gap-2 text-[#996600]">
+        <label className="flex  font-semibold items-center gap-2 text-[#bf8c27]">
           Min Price:
           <input
             type="number"
-            className="border border-[#cc9900] px-2 py-1 w-24 bg-white text-black"
-            value={minPrice}
+            className="border border-[#cc9900] px-2 py-1 w-24 bg-white text-black placeholder:text-black placeholder:font-semibold placeholder:text-base"
+            value={minPrice ?? ""}
             onChange={(e) => setMinPrice(Number(e.target.value))}
+            placeholder="0" 
           />
         </label>
-        <label className="flex items-center gap-2 text-[#996600]">
+        <label className="flex font-semibold items-center gap-2 text-[#bf8c27]">
           Max Price:
           <input
             type="number"
-            className="border border-[#cc9900] px-2 py-1 w-24 bg-white text-black"
+            className="border border-[#c49029] px-2 py-1 w-24 bg-white text-black placeholder:text-black placeholder:font-semibold placeholder:text-base"
             value={maxPrice}
+            placeholder="10000"
             onChange={(e) => setMaxPrice(Number(e.target.value))}
           />
         </label>
       </div>
 
       {/* Cards */}
-      <div className="flex flex-wrap justify-start gap-3 sm:gap-4 md:gap-5">
-  {paginatedCards.length > 0 ? (
-    paginatedCards.map((card, index) => (
-      <div key={card._id || card.id || index} className="w-[46%] sm:w-[31%] md:w-[23%]">
-        <Card card={card} />
+      <div className="pt-6 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
+        {paginatedCards.length > 0 ? (
+          paginatedCards.map((card, index) => (
+            <div key={card._id || card.id || index} className="w-[46%] sm:w-[31%] md:w-[23%] flex justify-center items-center">
+              <Card card={card} />
+            </div>
+          ))
+        ) : (
+          <p className="text-gray-600">No cards found.</p>
+        )}
       </div>
-    ))
-  ) : (
-    <p className="text-gray-600">No cards found.</p>
-  )}
-</div>
-
 
       {/* Pagination */}
       {totalPages > 1 && (
@@ -114,11 +119,10 @@ const CardPage = ({category}) => {
             <button
               key={i}
               onClick={() => setCurrentPage(i + 1)}
-              className={`px-3 py-1 border rounded ${
-                currentPage === i + 1
-                  ? "bg-gradient-to-r from-[#FFD700] to-[#FFAA00] text-white font-semibold"
-                  : "bg-white text-black border-gray-300"
-              }`}
+              className={`px-3 py-1 border rounded ${currentPage === i + 1
+                ? "bg-gradient-to-r from-[#FFD700] to-[#FFAA00] text-white font-semibold"
+                : "bg-white text-black border-gray-300"
+                }`}
             >
               {i + 1}
             </button>

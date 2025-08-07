@@ -95,7 +95,7 @@ const CardDetail = () => {
         onMouseLeave={handleMouseLeave}
       >
         {/* Thumbnails */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 ">
           <img
             src={card.images.front}
             onClick={() => setCurrentImage(card.images.front)}
