@@ -59,9 +59,40 @@ function Home() {
 
 
   return (
-    <div className="space-y-4 px-4 pt-8 font-serif bg-[#f4f0d4] text-gray-800 relative">
+    <div className="space-y-4 px-3 pt-3 md:pt-5 font-serif bg-[#f4f0d4] text-gray-800 relative">
 
       <WelcomeBanner />
+
+      <section className="md:px-10">
+        
+          <div className="flex flex-wrap w-full justify-center gap-6">
+            <div className="relative w-full"
+            style={{ overflowX: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+
+
+            <div className="flex w-full md:gap-8 gap-12 md:px-4 md:px-10  ">
+              {categories.map((card, index) => (
+                <button
+                  onClick={() => setCategory(card.category)}
+                  key={index}
+                  className="md:w-[200px] w-[120px] h-auto  rounded-lg flex flex-col items-center text-center  "
+                >
+                  <div className="w-20 h-20 bg-purple-300 sm:w-24 sm:h-24 md:w-20 md:h-20 rounded-full overflow-hidden">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-full object-cover hover:shadow-[5px_5px_15px_#F3C623]"
+                    />
+                  </div>
+                  <div className="md:h-[5vw] h-[20vw] w-[12vw] flex items-center justify-center">
+                    <h3 className="mt-2 text-center font-semibold text-heading max-w-[120px] text-lg ">{card.title}</h3>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Carousel
         swipeable
@@ -78,13 +109,13 @@ function Home() {
       >
 
 
-        <div className="w-full h-[270.5px] md:h-[330px] overflow-hidden border-[2vw] md:border-[1vw] border-[#E9A319] rounded-xl">
+        <div className="w-full h-[235.5px] md:h-[330px] p-[.1vw] md:p-[0px] overflow-hidden border-[2vw] md:border-[1vw] border-[#E9A319] rounded-xl">
           {images.map((img) => (
             <img
               key={img.id}
               src={img.link}
               alt={`Slide ${img.id}`}
-              className="w-full h-full object-cover object-[17.5%_0%] md:object-[center]"
+              className="w-full h-full object-cover object-[17%_0%] md:object-[center]"
               loading="eager"
               decoding="async"
               fetchpriority="high"
@@ -92,38 +123,6 @@ function Home() {
           ))}
         </div>
       </Carousel>
-
-      <section className="md:px-10 ">
-        <h2 className="text-5xl font-semibold text-center md:mb-[2.4vw] mb-[6vw]  text-heading underline decoration-[#F3C623] decoration-[6px]">Categories</h2>
-        
-          <div className="flex flex-wrap justify-center gap-6">
-            <div className="relative w-full"
-            style={{ overflowX: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-
-
-            <div className="flex w-max gap-6 px-4 md:px-10 md:py-7 ">
-              {categories.map((card, index) => (
-                <button
-                  onClick={() => setCategory(card.category)}
-                  key={index}
-                  className="md:w-[200px] md:h-[220px] w-[150px] h-auto pt-3 md:pt-5 border-[3px] md:border-[2px] border-[#F3C623] rounded-xl flex flex-col items-center text-center bg-white hover:shadow-[5px_5px_15px_#F3C623] "
-                >
-                  <div className="w-20 h-20 bg-purple-300 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full overflow-hidden">
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="md:h-[5vw] h-[20vw] w-[12vw] flex items-center justify-center">
-                    <h3 className="mt-2 text-center font-bold text-heading max-w-[120px] text-xl ">{card.title}</h3>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <CardPage category={category} />
 

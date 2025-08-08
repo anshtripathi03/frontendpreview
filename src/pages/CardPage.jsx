@@ -72,12 +72,12 @@ const CardPage = ({ category }) => {
       <h2 className="text-4xl font-b
       old mb-4 text-[#c68b00]">
         {!category ? `Showing results for:` : ""}
-        <span className="text-[#bf8c27] italic">{query || category || "All"}</span>
+        <span className="text-[#bf8c27] text-3xl md:text-4xl italic">{query || category || "All"}</span>
       </h2>
 
       {/* Price Filter */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
-        <label className="flex  font-semibold items-center gap-2 text-[#bf8c27]">
+        <label className="flex  font-semibold text-[14px] md:text-lg items-center gap-2 text-[#bf8c27]">
           Min Price:
           <input
             type="number"
@@ -87,7 +87,7 @@ const CardPage = ({ category }) => {
             placeholder="0" 
           />
         </label>
-        <label className="flex font-semibold items-center gap-2 text-[#bf8c27]">
+        <label className="flex font-semibold text-[14px] md:text-lg items-center gap-2 text-[#bf8c27]">
           Max Price:
           <input
             type="number"
