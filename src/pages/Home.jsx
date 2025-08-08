@@ -59,7 +59,7 @@ function Home() {
 
 
   return (
-    <div className="space-y-4 px-3 pt-3 md:pt-5 font-serif bg-[#f4f0d4] text-gray-800 relative">
+    <div className=" px-3 pt-3 md:pt-5 font-serif bg-[#f4f0d4] text-gray-800 relative">
 
       <WelcomeBanner />
 
@@ -70,22 +70,22 @@ function Home() {
             style={{ overflowX: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
 
 
-            <div className="flex w-full md:gap-8 gap-12 md:px-4 md:px-10  ">
+            <div className="flex w-full md:gap-8 gap-7 md:px-4 md:px-10 ">
               {categories.map((card, index) => (
                 <button
                   onClick={() => setCategory(card.category)}
                   key={index}
                   className="md:w-[200px] w-[120px]  rounded-lg flex flex-col items-center text-center  "
                 >
-                  <div className="w-20 h-20 bg-purple-300 sm:w-24 sm:h-24 md:w-20 md:h-20 rounded-full overflow-hidden">
+                  <div className=" bg-purple-300 w-[50px] h-[50px] md:w-20 md:h-20 rounded-full overflow-hidden">
                     <img
                       src={card.image}
                       alt={card.title}
-                      className="w-full h-full object-cover hover:shadow-[5px_5px_15px_#F3C623]"
+                      className="w-full h-full object-cover hover:shadow-[5px_5px_15px_#F3C623] "
                     />
                   </div>
-                  <div className="md:h-[5vw] h-[20vw] w-[12vw] flex items-center justify-center">
-                    <h3 className="mt-2 text-center font-semibold text-heading max-w-[120px] text-lg ">{card.title}</h3>
+                  <div className="md:h-[5vw] h-[15vw] w-[12vw] flex items-center justify-center">
+                    <h3 className="mt-2 text-center font-semibold text-heading max-w-[120px] md:text-lg text-[10px] ">{card.title}</h3>
                   </div>
                 </button>
               ))}
@@ -105,11 +105,11 @@ function Home() {
         transitionDuration={500}
         containerClass="carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile"]}
-        itemClass="carousel-item-padding-40-px"
+        itemClass="carousel-item-padding-40px"
       >
 
 
-        <div className="w-full h-[235.5px] md:h-[330px] p-[.1vw] md:p-[0px] overflow-hidden border-[2vw] md:border-[1vw] border-[#E9A319] rounded-xl">
+        <div className="w-full mb-4 h-[235.5px] md:h-[330px] p-[.1vw] md:p-[0px] overflow-hidden border-[2vw] md:border-[.8vw] border-[#E9A319] rounded-xl">
           {images.map((img) => (
             <img
               key={img.id}
