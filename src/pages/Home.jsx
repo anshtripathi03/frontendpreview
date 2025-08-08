@@ -75,7 +75,7 @@ function Home() {
                 <button
                   onClick={() => setCategory(card.category)}
                   key={index}
-                  className="md:w-[200px] w-[120px] h-auto  rounded-lg flex flex-col items-center text-center  "
+                  className="md:w-[200px] w-[120px]  rounded-lg flex flex-col items-center text-center  "
                 >
                   <div className="w-20 h-20 bg-purple-300 sm:w-24 sm:h-24 md:w-20 md:h-20 rounded-full overflow-hidden">
                     <img
