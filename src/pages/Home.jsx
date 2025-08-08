@@ -109,7 +109,7 @@ function Home() {
       >
 
 
-        <div className="w-full mb-4 h-[235.5px] md:h-[330px] p-[.1vw] md:p-[0px] overflow-hidden border-[2vw] md:border-[.8vw] border-[#E9A319] rounded-xl">
+        <div className="w-full mt-2 mb-4 h-[235.5px] md:h-[330px] overflow-hidden border-[2vw] md:border-[.8vw] border-[#E9A319] rounded-xl">
           {images.map((img) => (
             <img
               key={img.id}
