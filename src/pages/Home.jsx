@@ -115,7 +115,7 @@ function Home() {
               key={img.id}
               src={img.link}
               alt={`Slide ${img.id}`}
-              className="w-full h-full object-cover object-[17%_0%] md:object-[center]"
+              className="w-full h-full object-cover object-[8.5%_4%] md:object-[center]"
               loading="eager"
               decoding="async"
               fetchpriority="high"
