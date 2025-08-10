@@ -34,9 +34,9 @@ const TrendingCards = () => {
   };
 
   return (
-    <div className=" bg-[#f4f0d4] py-16 text-heading font-serif">
-      <h2 className="text-3xl font-bold mb-6 text-center text-[#6A4E3A]">
-        🔥 Trending Cards
+    <div className=" bg-[#f4f0d4] py-6 md:py-16 text-heading font-serif">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-[#6A4E3A]">
+        🔥Trending Cards
       </h2>
 
 <div className="bg-[#f6e37a] p-3 w-[93.5vw] md:w-full border-solid border-[.5vw] border-[#E1AA36] rounded-xl">
