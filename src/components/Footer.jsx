@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-900 text-white pt-10 pb-4 border-t border-gray-300 mt-10">
+    <footer className="bg-blue-900 text-white pt-10 pb-4 border-t border-gray-300 ">
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Logo & Description */}
         <div>
@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-300 mt-8 pt-4 text-center text-sm text-gray-600">
+      <div className="border-t border-gray-300 mt-8 pt-4 text-center text-sm text-white">
         &copy; {new Date().getFullYear()} TheNimantran.com. All rights reserved.
       </div>
     </footer>

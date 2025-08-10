@@ -69,8 +69,7 @@ const CardPage = ({ category }) => {
 
   return (
     <div className="md:p-6 p-2 bg-[#f6e37a] font-serif h-auto border-solid border-[.5vw] border-[#E1AA36] rounded-2xl overflow-hidden">
-      <h2 className="text-4xl font-b
-      old mb-4 text-[#c68b00]">
+      <h2 className="text-4xl font-bold mb-4 text-[#c68b00]">
         {!category ? `Showing results for:` : ""}
         <span className="text-[#bf8c27] text-3xl md:text-4xl italic">{query || category || "All"}</span>
       </h2>

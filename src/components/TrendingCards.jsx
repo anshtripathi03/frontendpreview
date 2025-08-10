@@ -34,11 +34,12 @@ const TrendingCards = () => {
   };
 
   return (
-    <div className="px-4 md:px-20 py-10 bg-white text-heading font-serif">
+    <div className=" bg-[#f4f0d4] py-16 text-heading font-serif">
       <h2 className="text-3xl font-bold mb-6 text-center text-[#6A4E3A]">
         🔥 Trending Cards
       </h2>
 
+<div className="bg-[#f6e37a] p-3 w-[93.5vw] md:w-full border-solid border-[.5vw] border-[#E1AA36] rounded-xl">
       {isMobile ? (
         <div className="grid grid-cols-2 gap-4">
           {popularCards.map((card) => (
@@ -48,12 +49,13 @@ const TrendingCards = () => {
       ) : (
         <Carousel responsive={responsive} infinite autoPlay={false}>
           {popularCards.map((card) => (
-            <div key={card._id} className="px-2">
+            <div key={card._id} className="px-10">
               <Card card={card} />
             </div>
           ))}
         </Carousel>
       )}
+      </div>
     </div>
   );
 };

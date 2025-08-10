@@ -49,8 +49,7 @@ const Card = ({ card }) => {
               </button>
               <button
                 onClick={(e) => handleBuyNow(card, e, navigate)}
-                className="mb-4 md:h-[43px] md:w-[135px] h-[30px] w-[65px] bg-orange-500 hover:bg-orange-600 text-white  rounded text-[9px] md:text-[1.3vw] font-medium"
-              >
+                className="mb-4 md:h-[43px] md:w-[135px] h-[30px] w-[65px] bg-orange-500 hover:bg-orange-600 text-white  rounded text-[9px] md:text-[1.3vw] font-medium">
                 Buy Now
               </button>
             </div>

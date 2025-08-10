@@ -11,22 +11,22 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-16 bg-white" id="why-choose-us">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-[#5b2c06] mb-12 text-center">
+    <section className="pt-10 bg-[#f4f0d4]" id="why-choose-us">
+      <div className="pb-8 max-w-6xl mx-auto px-2">
+        <h2 className="text-4xl font-bold text-[#5b2c06] mb-8 text-center">
           Why Choose Us?
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="bg-[#fff7ef] border border-[#e7d3b5] p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300"
+              className="bg-blue-900 text-white border border-[#e7d3b5] p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300"
             >
-              <div className="text-[#a0441e] mb-4">{reason.icon}</div>
-              <h3 className="text-xl font-semibold text-[#5b2c06] mb-2">
+              <div className=" mb-4">{reason.icon}</div>
+              <h3 className="text-xl font-semibold mb-2">
                 {reason.title}
               </h3>
-              <p className="text-[#7a5c3d]">{reason.desc}</p>
+              <p>{reason.desc}</p>
             </div>
           ))}
         </div>

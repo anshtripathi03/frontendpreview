@@ -26,6 +26,25 @@ const responsive = {
   mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
 };
 
+const responsive1 = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
 
 const images = [
   {
@@ -63,11 +82,11 @@ function Home() {
 
       <WelcomeBanner />
 
-      <section className="md:px-10">
+      
+        <section className="md:px-10">
         
           <div className="flex flex-wrap w-full justify-center gap-6">
-            <div className="relative w-full"
-            style={{ overflowX: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="relative w-full" style={{ overflowX: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
 
 
             <div className="flex w-full md:gap-8 gap-7 md:px-4 md:px-10 ">
@@ -93,14 +112,15 @@ function Home() {
           </div>
         </div>
       </section>
+     
 
       <Carousel
         swipeable
         draggable
         responsive={responsive}
         infinite
-        autoPlay={false}
-        autoPlaySpeed={2500}
+        autoPlay={true}
+        autoPlaySpeed={2000}
         keyBoardControl
         transitionDuration={500}
         containerClass="carousel-container"

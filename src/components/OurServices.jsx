@@ -42,26 +42,26 @@ const services = [
 
 export default function OurServices() {
   return (
-    <section className="py-16 bg-white" id="services">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-[#5b2c06] mb-12 text-center">
+    <section className="pt-6 bg-[#f4f0d4] " id="services">
+      <div className="max-w-6xl mx-auto px-2">
+        <h2 className="text-4xl font-bold text-[#5b2c06] mb-9 text-center">
           Our Services
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-white">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-[#fff7ef] border border-[#e7d3b5] p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300"
+              className="bg-blue-900 border border-[#e7d3b5] p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300"
             >
-              <div className="text-[#a0441e] mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-[#5b2c06] mb-2">
+              <div className=" mb-4">{service.icon}</div>
+              <h3 className="text-xl font-semibold  mb-2">
                 {service.title}
               </h3>
-              <p className="text-[#7a5c3d]">{service.desc}</p>
+              <p>{service.desc}</p>
             </div>
           ))}
         </div>
-      </div>
+        </div>
     </section>
   );
 }
