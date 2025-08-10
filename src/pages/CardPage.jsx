@@ -100,7 +100,7 @@ const CardPage = ({ category }) => {
       </div>
 
       {/* Cards */}
-      <div className="pt-6 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
+      <div className="pt-1 md:pt-5 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
         {paginatedCards.length > 0 ? (
           paginatedCards.map((card, index) => (
             <div key={card._id || card.id || index} className="w-[46%] sm:w-[31%] md:w-[23%] flex justify-center items-center">
