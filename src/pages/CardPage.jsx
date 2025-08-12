@@ -76,7 +76,7 @@ const CardPage = ({ category }) => {
 
       {/* Price Filter */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
-        <label className="flex  font-semibold text-[14px] md:text-lg items-center gap-2 text-[#bf8c27]">
+        <label className="flex font-semibold text-[14px] md:text-lg items-center gap-2 text-[#bf8c27]">
           Min Price:
           <input
             type="number"

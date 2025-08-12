@@ -76,53 +76,51 @@ function Header() {
         {/* Logo + Hamburger */}
         <div className="flex items-center justify-between w-full md:w-auto">
 
-              <div  className="flex justify-center items-center">
+          <div className="flex justify-center items-center">
 
-  <button
-            className="text-white text-xl md:hidden"
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
-          >
-            {menuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-          <Link to="/" className="flex items-center space-x-2">
-            <img src="./name.png" alt="Nimantran Logo" className="h-10 w-auto object-contain" />
-          </Link>
-
-
-              </div>
-
-           <div className="flex justify-center items-center md:hidden">
-    <NavLink
-            to="/cart"
-            className={({ isActive }) =>
-              `relative px-3 py-2 rounded-md text-xl transition ${
-                isActive ? "bg-pink-600 text-white" : "text-white hover:bg-[#195fc4]"
-              }`
-            }
-          >
-            🛒
-          </NavLink>
-           {!user ? (
             <button
-              onClick={() => setShowLogin((prev) => ({ ...prev, login: true }))}
-              className="px-3 py-2 rounded-md text-white hover:bg-[#195fc4]"
+              className="text-white text-xl md:hidden"
+              onClick={toggleMenu}
+              aria-label="Toggle Menu"
             >
-              Login
+              {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
-          ) : (
-            <button
-              onClick={handleDashboardClick}
-              className="px-3 py-2 rounded-md text-white hover:bg-[#195fc4]"
-              title="Dashboard"
-            >
-              {user?.isWholeseller ? <FaStore size={20} /> : <FaUser size={20} />}
-            </button>
-          )}
+            <Link to="/" className="flex items-center space-x-2">
+              <img src="./name.png" alt="Nimantran Logo" className="h-10 w-auto object-contain" />
+            </Link>
 
-           </div>
-         
-        
+
+          </div>
+
+          <div className="flex justify-center items-center md:hidden">
+            <NavLink
+              to="/cart"
+              className={({ isActive }) =>
+                `relative px-3 py-2 rounded-md text-xl transition ${isActive ? "bg-pink-600 text-white" : "text-white hover:bg-[#195fc4]"
+                }`
+              }
+            >
+              🛒
+            </NavLink>
+            {!user ? (
+              <button
+                onClick={() => setShowLogin((prev) => ({ ...prev, login: true }))}
+                className="px-3 py-2 rounded-md hover:bg-[#195fc4]"
+              >
+                Login
+              </button>
+            ) : (
+              <button
+                onClick={handleDashboardClick}
+                className="px-3 py-2 rounded-md text-white hover:bg-[#195fc4]"
+                title="Dashboard"
+              >
+                {user?.isWholeseller ? <FaStore size={20} /> : <FaUser size={20} />}
+              </button>
+            )}
+          </div>
+
+
         </div>
 
         {/* Search Bar */}
@@ -152,9 +150,8 @@ function Header() {
                 <li
                   key={index}
                   onClick={() => handleSelect(item)}
-                  className={`px-4 py-2 cursor-pointer border-b hover:bg-blue-100 ${
-                    index === activeIndex ? "bg-blue-100" : ""
-                  }`}
+                  className={`px-4 py-2 cursor-pointer border-b hover:bg-blue-100 ${index === activeIndex ? "bg-blue-100" : ""
+                    }`}
                 >
                   <div className="font-semibold">{item.title}</div>
                   <div className="text-sm text-gray-600">
@@ -171,8 +168,7 @@ function Header() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `px-3 py-2 rounded-md transition ${
-                isActive ? "bg-pink-600 text-white" : "text-white hover:bg-[#195fc4]"
+              `px-3 py-2 rounded-md transition ${isActive ? "bg-pink-600 text-white" : "text-white hover:bg-[#195fc4]"
               }`
             }
           >
@@ -181,8 +177,7 @@ function Header() {
           <NavLink
             to="/buisness"
             className={({ isActive }) =>
-              `px-3 py-2 rounded-md transition ${
-                isActive ? "bg-pink-600 text-white" : "text-white hover:bg-[#195fc4]"
+              `px-3 py-2 rounded-md transition ${isActive ? "bg-pink-600 text-white" : "text-white hover:bg-[#195fc4]"
               }`
             }
           >
@@ -191,8 +186,7 @@ function Header() {
           <NavLink
             to="/cart"
             className={({ isActive }) =>
-              `relative px-3 py-2 rounded-md text-xl transition ${
-                isActive ? "bg-pink-600 text-white" : "text-white hover:bg-[#195fc4]"
+              `relative px-3 py-2 rounded-md text-xl transition ${isActive ? "bg-pink-600 text-white" : "text-white hover:bg-[#195fc4]"
               }`
             }
           >
@@ -214,6 +208,15 @@ function Header() {
               {user?.isWholeseller ? <FaStore size={20} /> : <FaUser size={20} />}
             </button>
           )}
+
+          <button
+            onClick={() => navigate("/dashboard")}
+            className="px-3 py-2 rounded-md text-white hover:bg-[#195fc4]"
+          >
+            User Dashboard
+          </button>
+
+
         </nav>
       </div>
 
@@ -255,7 +258,7 @@ function Header() {
           </div>
         </>
       )}
-       {/* Modals */}
+      {/* Modals */}
       {showLogin.login && (
         <Login onClose={() => setShowLogin({ login: false, signup: false })} />
       )}
