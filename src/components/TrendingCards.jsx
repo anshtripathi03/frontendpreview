@@ -27,11 +27,15 @@ const TrendingCards = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const responsive = {
-    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 4 },
-    tablet: { breakpoint: { max: 1024, min: 768 }, items: 2 },
-    mobile: { breakpoint: { max: 768, min: 0 }, items: 2 },
-  };
+  // const responsive = {
+  //   desktop: { breakpoint: { max: 3000, min: 1024 }, items: 4 },
+  //   tablet: { breakpoint: { max: 1024, min: 768 }, items: 4 },
+  //   mobile: { breakpoint: { max: 768, min: 0 }, items: 4 },
+  // };
+
+  const alwaysFour = {
+  all: { breakpoint: { max: 4000, min: 0 }, items: 4 }
+};
 
   return (
     <div className=" bg-[#f4f0d4] py-6 md:py-16 text-heading font-serif">
@@ -47,7 +51,7 @@ const TrendingCards = () => {
           ))}
         </div>
       ) : (
-        <Carousel responsive={responsive} infinite autoPlay={false}>
+        <Carousel responsive={alwaysFour} infinite autoPlay={false}>
           {popularCards.map((card) => (
             <div key={card._id} className="px-10">
               <Card card={card} />

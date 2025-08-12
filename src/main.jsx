@@ -19,7 +19,7 @@ import NotFound from "./pages/NotFound";
 import CardPage from "./pages/CardPage";
 import Buisness from "./pages/Buisness";
 import WholesalerDashboard from "./components/dashboard/WholesalerDashboard";
-import UserDashboard from "./components/dashboard/UserDashboard"
+import UserDashboard from "./components/dashboard/user.jsx";
 import BuyNowPage from "./pages/BuyNowPage";
 import { LoadingProvider } from "./context/LoadingContext";
 
