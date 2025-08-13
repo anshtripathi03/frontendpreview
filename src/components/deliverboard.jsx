@@ -81,8 +81,8 @@ export default function DeliveryBoard({ order, handleCancelOrder, onBack }) {
           style={{ width: `${100 / (statuses.length - 1)}%` }}
         >
           <div
-            className={`w-8 h-8 rounded-full border-4 transition-colors duration-500 bg-white
-              ${isActive ? statusColors[status] : "border-gray-400 dark:border-gray-500 "}
+            className={`w-8 h-8 rounded-full border-4 transition-colors duration-500
+              ${isActive ? statusColors[status] : "border-gray-400 dark:border-gray-500 bg-white"}
             `}
           ></div>
           <span

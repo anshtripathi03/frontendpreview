@@ -42,7 +42,7 @@ const services = [
 
 export default function OurServices() {
   return (
-    <section className="pt-6 bg-[#f4f0d4] " id="services">
+    <section className="pt-10 bg-white " id="services">
       <div className="max-w-6xl mx-auto px-2">
         <h2 className="text-4xl font-bold text-[#5b2c06] mb-9 text-center">
           Our Services

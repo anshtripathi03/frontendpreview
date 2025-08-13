@@ -105,7 +105,7 @@ function Header() {
             {!user ? (
               <button
                 onClick={() => setShowLogin((prev) => ({ ...prev, login: true }))}
-                className="px-3 py-2 rounded-md hover:bg-[#195fc4]"
+                className="px-3 py-2 rounded-md text-white hover:bg-[#195fc4]"
               >
                 Login
               </button>
@@ -118,6 +118,17 @@ function Header() {
                 {user?.isWholeseller ? <FaStore size={20} /> : <FaUser size={20} />}
               </button>
             )}
+
+            <button
+            onClick={() => navigate("dashboard/user")}
+            className="px-3 py-2 rounded-md text-white hover:bg-[#195fc4]"
+          >
+            <div className="text-white h-7 w-7 border-[1px] rounded-2
+            
+            xl border-white border-solid">
+              <i class="ri-user-3-fill"></i>
+            </div>
+          </button>
           </div>
 
 
@@ -186,6 +197,7 @@ function Header() {
           <NavLink
             to="/cart"
             className={({ isActive }) =>
+
               `relative px-3 py-2 rounded-md text-xl transition ${isActive ? "bg-pink-600 text-white" : "text-white hover:bg-[#195fc4]"
               }`
             }
@@ -210,10 +222,12 @@ function Header() {
           )}
 
           <button
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate("dashboard/user")}
             className="px-3 py-2 rounded-md text-white hover:bg-[#195fc4]"
           >
-            User Dashboard
+            <div className="text-white h-6 w-6 border-[2px] rounded-xl border-white border-solid">
+              <i class="ri-user-3-fill"></i>
+            </div>
           </button>
 
 
@@ -254,8 +268,20 @@ function Header() {
               >
                 {user?.isWholeseller ? "Wholeseller Dashboard" : "User Dashboard"}
               </button>
+
+              
             )}
+
+            <button
+            onClick={() => navigate("dashboard/user")}
+            className="px-3 py-2 rounded-md text-white hover:bg-[#195fc4]"
+            ><div className="text-white h-6 w-6 border-[2px] rounded-xl border-white border-solid">
+              <i class="ri-user-3-fill"></i>
+            </div>
+            </button>
           </div>
+
+
         </>
       )}
       {/* Modals */}

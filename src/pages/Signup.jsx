@@ -30,7 +30,7 @@ const Signup = ({ onClose }) => {
     setLoading(true);
 
     try {
-      const res = await axios.post("/api/auth/register", formData, {
+      const res = await axios.post("https://nemolive-99.onrender.com/api/auth/register", formData, {
         withCredentials: true,
       });
 

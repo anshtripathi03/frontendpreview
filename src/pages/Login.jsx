@@ -29,7 +29,7 @@ const Login = ({ onClose }) => {
     setLoading(true); 
 
     try {
-      const res = await axios.post("/api/auth/login", formData, {
+      const res = await axios.post("https://nemolive-99.onrender.com/api/auth/login", formData, {
         withCredentials: true,
       });
 
