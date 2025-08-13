@@ -12,7 +12,7 @@ const CardPage = ({ category }) => {
 
   const [filteredCards, setFilteredCards] = useState([]);
   const [minPrice, setMinPrice] = useState(null);
-  const [maxPrice, setMaxPrice] = useState(10000);
+  const [maxPrice, setMaxPrice] = useState(1000);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 8;
 
@@ -68,38 +68,46 @@ const CardPage = ({ category }) => {
 
 
   return (
-    <div className="md:p-6 p-2 bg-[#f6e37a] font-serif h-auto border-solid border-[.5vw] border-[#E1AA36] rounded-2xl overflow-hidden">
-      <h2 className="text-4xl font-bold mb-4 text-[#c68b00]">
-        {!category ? `Showing results for:` : ""}
-        <span className="text-[#bf8c27] text-3xl md:text-4xl italic">{query || category || "All"}</span>
+    <div className="md:p-6 p-2 bg-white font-serif h-auto rounded-2xl overflow-hidden">
+      <h2 className="text-4xl font-bold mb-4 text-black">
+        {!category ? `Showing results for:` :
+
+          ""}
+        <span className="text-black text-xl md:text-4xl italic">{query || category || "All"}</span>
       </h2>
 
       {/* Price Filter */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
-        <label className="flex font-semibold text-[14px] md:text-lg items-center gap-2 text-[#bf8c27]">
+        <label className="flex font-semibold text-[14px] md:text-lg items-center gap-2 text-black">
           Min Price:
           <input
             type="number"
-            className="border border-[#cc9900] px-2 py-1 w-24 bg-white text-black placeholder:text-black placeholder:font-semibold placeholder:text-base"
-            value={minPrice ?? ""}
-            onChange={(e) => setMinPrice(Number(e.target.value))}
-            placeholder="0" 
+            className="border border-black px-2 py-1 w-24 bg-white text-black placeholder:text-black placeholder:font-semibold placeholder:text-base"
+            value={minPrice ?? ""} v
+            onChange={(e) =>{const value = Number(e.target.value);
+              setMinPrice(value === 0 ? null : value);} 
+            }
+            placeholder="0"
           />
         </label>
-        <label className="flex font-semibold text-[14px] md:text-lg items-center gap-2 text-[#bf8c27]">
+        <label className="flex font-semibold text-[14px] md:text-lg items-center gap-2 text-black">
           Max Price:
           <input
             type="number"
-            className="border border-[#c49029] px-2 py-1 w-24 bg-white text-black placeholder:text-black placeholder:font-semibold placeholder:text-base"
+            className="border border-black px-2 py-1 w-24 bg-white text-black placeholder:text-black placeholder:font-semibold placeholder:text-base"
             value={maxPrice}
-            placeholder="10000"
-            onChange={(e) => setMaxPrice(Number(e.target.value))}
+            placeholder="1000"
+            onChange={(e) => {
+              const value = Number(e.target.value);
+              setMaxPrice(value === 0 ? null : value);
+            }
+          }
           />
         </label>
       </div>
 
       {/* Cards */}
-      <div className="pt-1 md:pt-5 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
+      <div className="py-3 px-1 md:pt-5 flex flex-wrap justify-center gap-3 rounded-lg sm:gap-4 md:gap-6">
         {paginatedCards.length > 0 ? (
           paginatedCards.map((card, index) => (
             <div key={card._id || card.id || index} className="w-[46%] sm:w-[31%] md:w-[23%] flex justify-center items-center">

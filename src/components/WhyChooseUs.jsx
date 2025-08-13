@@ -11,7 +11,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="pt-10 bg-[#f4f0d4]" id="why-choose-us">
+    <section className="pt-16 bg-white" id="why-choose-us">
       <div className="pb-8 max-w-6xl mx-auto px-2">
         <h2 className="text-4xl font-bold text-[#5b2c06] mb-8 text-center">
           Why Choose Us?

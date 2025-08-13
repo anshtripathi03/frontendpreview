@@ -31,7 +31,7 @@ function OrderStatusProgress({ currentStatus }) {
                                     ? "bg-red-600 border-red-600"
                                     : isActive || isCompleted
                                         ? "bg-green-600 border-green-600"
-                                        : "bg-white border-gray-300"
+                                        : "bg-white border-gray-50"
                                 }
               `}
                         >
@@ -47,7 +47,7 @@ function OrderStatusProgress({ currentStatus }) {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
                             ) : (
-                                <div className="text-gray-400 text-xs">{idx + 1}</div>
+                                <div className="text-gray-50 text-xs">{idx + 1}</div>
                             )}
                         </div>
                         {/* Label */}
@@ -83,36 +83,41 @@ export default function Orders({ orders, handleCancelOrder, onSelectOrder }) {
 
     return (
         <section>
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+            <div className="bg-inherit dark:bg-gray-800 rounded-lg">
                 <h2 className="font-semibold mb-3">All Orders</h2>
                 <div className="overflow-x-auto">
-                    <div className="flex flex-col gap-10">
+                    <div className="flex flex-col gap-3 md:gap-10">
                         {filteredOrders.map(o => (
                             <div key={o.ordername} onClick={() => onSelectOrder(o)}
-                                className={`p-6 cursor-pointer flex gap-5 ${o.status === 'Cancelled' ? 'bg-red-100' : 'bg-gray-400'}`}>
-                                <div key={o.ordername} className="bg-gray-400 p-6 flex gap-5" >
-                                    <div className="bg-gray-400 p-6 flex gap-5" >
-                                        <div className="h-[10vw] w-[10vw]">
+                                className={`p-1 rounded-xl cursor-pointer flex gap-5 ${o.status === "Cancelled" ? 
+                                    'bg-red-100 border-solid border-[5px] border-red-500' : 
+                                    'bg-white border-solid border-[1px] border-black'
+                                    }`}>
+                                <div key={o.ordername} className={`flex gap-5
+                                `} >
+                                    <div className={`flex md:gap-[3px]
+                                     `} >
+                                        <div className=" h-[20vw] w-[20vw] md:h-[15vw] md:w-[15vw]">
                                             <img
                                                 src={o.orderimage}
                                                 alt={o.ordername}
                                                 className="h-full w-full object-cover rounded-xl"
                                             />
                                         </div>
-                                        <div className="flex flex-col justify-start">
-                                            <h1 className="text-4xl font-bold">{o.ordername}</h1>
+                                        <div className="flex w-[38.8vw] bg-inherit md:text-[1.3vw] md:w-[35vw] pl-2 line flex-col justify-start">
+                                            <h1 className="line-clamp-1  md:text-[3vw] font-bold">{o.ordername}</h1>
                                             <h3>Price: {o.total}</h3>
                                             <h4>Date: {o.date}</h4>
                                             <h4>Status: {o.status}</h4>
                                         </div>
-                                        <div className="self-start">
+                                        <div className="self-start bg-inherit">
                                             {(o.status === "Processing" || o.status === "Shipped") && (
                                                 <button
                                                     onClick={(e) => {
                                                         e.stopPropagation(); // prevent toggling the detail panel when clicking cancel
                                                         handleCancelOrder(o.ordername);
                                                     }}
-                                                    className="px-3 py-1 text-xs bg-red-50 text-red-600 rounded"
+                                                    className="md:px-3 md:py-2 px-2 py-1 md:text-[1.1vw] bg-red-50 text-red-600 rounded-lg"
                                                 >
                                                     Cancel Order
                                                 </button>

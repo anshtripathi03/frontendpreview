@@ -78,7 +78,7 @@ function Home() {
 
 
   return (
-    <div className=" px-3 pt-3 md:pt-5 font-serif bg-[#f4f0d4] text-gray-800 relative">
+    <div className=" px-3 md:px-5 pt-3 md:pt-5 font-serif bg-white text-gray-800 relative">
 
       <WelcomeBanner />
 
@@ -89,14 +89,14 @@ function Home() {
             <div className="relative w-full" style={{ overflowX: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
 
 
-            <div className="flex w-full md:gap-8 gap-7 md:px-4 md:px-10 ">
+            <div className="flex w-full md:gap-8 gap-7 px-2 md:px-6 ">
               {categories.map((card, index) => (
                 <button
                   onClick={() => setCategory(card.category)}
                   key={index}
                   className="md:w-[200px] w-[120px]  rounded-lg flex flex-col items-center text-center  "
                 >
-                  <div className=" bg-purple-300 w-[50px] h-[50px] md:w-20 md:h-20 rounded-full overflow-hidden">
+                  <div className=" bg-purple-300 w-[40px] h-[40px] md:w-16 md:h-16 rounded-full overflow-hidden">
                     <img
                       src={card.image}
                       alt={card.title}
@@ -104,7 +104,7 @@ function Home() {
                     />
                   </div>
                   <div className="md:h-[5vw] h-[15vw] w-[12vw] flex items-center justify-center">
-                    <h3 className="mt-2 text-center font-semibold text-heading max-w-[120px] md:text-lg text-[10px] ">{card.title}</h3>
+                    <h3 className=" text-center font-semibold text-heading max-w-[120px] md:text-lg text-xs text-[10px] font-nata ">{card.title}</h3>
                   </div>
                 </button>
               ))}
@@ -127,9 +127,9 @@ function Home() {
         removeArrowOnDeviceType={["tablet", "mobile"]}
         itemClass="carousel-item-padding-40px"
       >
+ 
 
-
-        <div className="w-full mt-2 mb-4 h-[235.5px] md:h-[330px] overflow-hidden border-[2vw] md:border-[.8vw] border-[#E9A319] rounded-xl">
+        <div className="w-full  mt-2 mb-4 h-[235.5px] md:h-[330px] overflow-hidden rounded-xl">
           {images.map((img) => (
             <img
               key={img.id}

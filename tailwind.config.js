@@ -9,8 +9,12 @@ theme: {
       cream: "#f9f5ef",
       heading: "#3B2F2F",
     },
+       fontFamily: {
+        nata: ['"Nata Sans"', 'sans-serif'],
     },
 },
+},
+
   plugins:[]
 }
 
