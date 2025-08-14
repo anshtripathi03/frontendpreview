@@ -13,10 +13,10 @@ const Business = () => {
     : dummyCards.filter(card => card.category === selectedCategory);
 
   return (
-    <div className="min-h-screen px-6 md:px-20 py-10 bg-[#f9f1e7]">
+    <div className="min-h-screen px-6 md:px-20 py-10 bg-[#ffffff]">
       {isWholesaler ? (
         <div>
-          <h2 className="text-3xl font-bold mb-6 text-center text-heading">Wholesale Raw Cards</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center">Wholesale Raw Cards</h2>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {categories.map(cat => (
               <button

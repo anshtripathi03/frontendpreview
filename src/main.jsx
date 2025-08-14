@@ -17,7 +17,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 import CardPage from "./pages/CardPage";
-import Buisness from "./pages/Buisness";
+import Business from "./pages/Business.jsx";
 import WholesalerDashboard from "./components/dashboard/WholesalerDashboard";
 import UserDashboard from "./components/dashboard/user.jsx";
 import BuyNowPage from "./pages/BuyNowPage";
@@ -30,7 +30,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Temp />}>
       <Route path="" element={<Home />} />
-      <Route path="buisness" element={<Buisness />} />
+      <Route path="business" element={<Business />} />
       <Route path="dashboard/wholeseller" element={<WholesalerDashboard />} />
       <Route path="dashboard/user" element={<UserDashboard />} />
       <Route path="category/:category" element={<CardPage />} />

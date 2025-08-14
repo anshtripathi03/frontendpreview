@@ -6,6 +6,7 @@ import Category from "./pages/Category";
 import CardDetail from "./pages/CardDetail";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import Business from "./pages/Business.jsx";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
@@ -25,7 +26,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/orders" element={<OrderHistory />} />
-
+          <Route path="/business" element={<Business />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
          <Route path="dashboard/user" element={<UserDashboard />} />
