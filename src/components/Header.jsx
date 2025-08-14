@@ -186,7 +186,7 @@ function Header() {
             Home
           </NavLink>
           <NavLink
-            to="/buisness"
+            to="/business"
             className={({ isActive }) =>
               `px-3 py-2 rounded-md transition ${isActive ? "bg-pink-600 text-white" : "text-white hover:bg-[#195fc4]"
               }`
@@ -242,7 +242,7 @@ function Header() {
             <NavLink to="/" onClick={toggleMenu} className="block hover:text-yellow-300">
               Home
             </NavLink>
-            <NavLink to="/buisness" onClick={toggleMenu} className="block hover:text-yellow-300">
+            <NavLink to="/business" onClick={toggleMenu} className="block hover:text-yellow-300">
               Business
             </NavLink>
             <NavLink to="/cart" onClick={toggleMenu} className="block hover:text-yellow-300">
